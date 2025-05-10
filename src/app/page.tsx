@@ -1,103 +1,121 @@
 import Image from "next/image";
+import { portfolioItems } from "@/data/portfolio";
+import Link from "next/link";
+import { MobileCarousel } from "./Carousel";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+    <main className="container mx-auto p-6">
+      {/* Photo and About Section */}
+      <header className="text-center mb-12">
+        <div className="mx-auto w-40 h-40 relative mb-4">
+          <Image
+            src="/images/me.jpeg"
+            alt="Sobhan Aminnejad"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-full"
+          />
+        </div>
+        <h1 className="text-4xl font-bold mb-2">Sobhan Aminnejad</h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Versatile and passionate Software Engineer with a strong focus on
+          front-end development and a broad interest in software engineering.
+          Experienced in building high-performance websites using React,
+          Next.js, and modern frontend tools, and driving impactful business
+          results.
+        </p>
+        <p className="text-gray-500 mt-2">
+          Haarlem, The Netherlands • (+31) 684093339 •{" "}
+          <a href="mailto:sobition@gmail.com" className="underline">
+            sobition@gmail.com
+          </a>
+        </p>
+        <div className="mt-4 space-x-4">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/resume.pdf"
+            download
+            className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            Download Résumé
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://linkedin.com/in/sobhan-aminnejad/"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300"
           >
-            Read our docs
+            LinkedIn
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </header>
+
+      {/* Portfolio Section */}
+      <section>
+        <h2 className="text-3xl font-semibold mb-6">Portfolio</h2>
+        <div className="space-y-16">
+          {portfolioItems.map((item) => (
+            <div key={item.id}>
+              <Link
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center mb-4"
+              >
+                {item.logo && (
+                  <div className="flex items-center justify-center w-16 h-16 mr-4">
+                    <Image
+                      className="rounded-lg"
+                      src={item.logo}
+                      alt={`${item.name} logo`}
+                      width={48}
+                      height={48}
+                      objectFit="contain"
+                    />
+                  </div>
+                )}
+                <h3 className="text-3xl font-bold">{item.name}</h3>
+              </Link>
+              <p className="mb-4 text-gray-600">{item.description}</p>
+              <ul className="list-disc list-inside mb-4">
+                {item.highlights.map((highlight, idx) => (
+                  <li key={idx} className="mb-2">
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Mobile: Infinite Carousel */}
+              <div className="md:hidden mb-4">
+                <MobileCarousel images={item.screenshots} />
+              </div>
+
+              {/* Tablet & Desktop: Tiled Grid */}
+              <div className="hidden md:grid grid-cols-3 gap-4">
+                {item.screenshots.map((src, idx) => {
+                  // Pattern: idx 0 & 3 = landscape (span 2 columns), idx 1 & 2 = portrait (span 1)
+                  const isLandscape = idx % 4 === 0 || idx % 4 === 3;
+                  return (
+                    <div
+                      key={idx}
+                      className={`relative w-full ${
+                        isLandscape ? "col-span-2" : "col-span-1"
+                      } h-80 bg-white dark:bg-gray-800 ring-1 ring-gray-200 dark:ring-gray-700 overflow-hidden rounded-lg shadow-lg flex items-center justify-center`}
+                    >
+                      <Image
+                        src={src}
+                        alt={`${item.name} screenshot ${idx + 1}`}
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
