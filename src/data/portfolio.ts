@@ -13,10 +13,12 @@ export const portfolioItems = [
       "Optimized caching and layout-sharing strategies, cutting redundant requests by 30%.",
     ],
     screenshots: [
-      "/images/catawiki/porsche-campaign.png",
+      "/images/catawiki/smart-fill.png",
+      "/images/catawiki/resubmit-sold-lots.png",
       "/images/catawiki/mobile-seller-landing.jpeg",
-      "/images/catawiki/lot-preview.png",
+      "/images/catawiki/porsche-campaign.png",
       "/images/catawiki/create-lot.png",
+      "/images/catawiki/lot-preview.png",
     ],
   },
   {
