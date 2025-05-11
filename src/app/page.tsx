@@ -33,8 +33,8 @@ export default function Home() {
         </p>
         <div className="mt-4 space-x-4">
           <a
-            href="/resume.pdf"
-            download
+            href="/Sobhan_Aminnejad-CV.pdf"
+            download="Sobhan_Aminnejad-CV.pdf"
             className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
           >
             Download Résumé
