@@ -1,3 +1,7 @@
+import getConfig from "next/config";
+
+const { publicRuntimeConfig } = getConfig(); // ensure basePath is in publicRuntimeConfig
+
 export const portfolioItems = [
   {
     id: "catawiki",
@@ -13,12 +17,12 @@ export const portfolioItems = [
       "Optimized caching and layout-sharing strategies, cutting redundant requests by 30%.",
     ],
     screenshots: [
-      "/images/catawiki/smart-fill.png",
-      "/images/catawiki/resubmit-sold-lots.png",
-      "/images/catawiki/mobile-seller-landing.jpeg",
-      "/images/catawiki/porsche-campaign.png",
-      "/images/catawiki/create-lot.png",
-      "/images/catawiki/lot-preview.png",
+      `${publicRuntimeConfig}/images/catawiki/smart-fill.png`,
+      `${publicRuntimeConfig}/images/catawiki/resubmit-sold-lots.png`,
+      `${publicRuntimeConfig}/images/catawiki/mobile-seller-landing.jpeg`,
+      `${publicRuntimeConfig}/images/catawiki/porsche-campaign.png`,
+      `${publicRuntimeConfig}/images/catawiki/create-lot.png`,
+      `${publicRuntimeConfig}/images/catawiki/lot-preview.png`,
     ],
   },
   {
@@ -35,10 +39,10 @@ export const portfolioItems = [
       "Automated CI/CD pipelines, cutting deployment time by 50% and reducing release issues.",
     ],
     screenshots: [
-      "/images/snappmarket/desktop-bundle.png",
-      "/images/snappmarket/mobile-bundle.png",
-      "/images/snappmarket/mobile-bundle-details.png",
-      "/images/snappmarket/desktop-bundle-details.png",
+      `${publicRuntimeConfig}/images/snappmarket/desktop-bundle.png`,
+      `${publicRuntimeConfig}/images/snappmarket/mobile-bundle.png`,
+      `${publicRuntimeConfig}/images/snappmarket/mobile-bundle-details.png`,
+      `${publicRuntimeConfig}/images/snappmarket/desktop-bundle-details.png`,
     ],
   },
   {
@@ -55,10 +59,10 @@ export const portfolioItems = [
       "Mentored interns and established code review practices, reducing post-deployment issues by 30%.",
     ],
     screenshots: [
-      "/images/shab/desktop-home.png",
-      "/images/shab/mobile-home.png",
-      "/images/shab/mobile-popular-cities.png",
-      "/images/Shab/desktop-last-minute.png",
+      `${publicRuntimeConfig}/images/shab/desktop-home.png`,
+      `${publicRuntimeConfig}/images/shab/mobile-home.png`,
+      `${publicRuntimeConfig}/images/shab/mobile-popular-cities.png`,
+      `${publicRuntimeConfig}/images/shab/desktop-last-minute.png`,
     ],
   },
 ];
