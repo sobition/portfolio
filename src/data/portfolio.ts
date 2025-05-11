@@ -35,10 +35,10 @@ export const portfolioItems = [
       "Automated CI/CD pipelines, cutting deployment time by 50% and reducing release issues.",
     ],
     screenshots: [
-      "/images/snappmarket/desktop-bundle.png",
-      "/images/snappmarket/mobile-bundle.png",
-      "/images/snappmarket/mobile-bundle-details.png",
-      "/images/snappmarket/desktop-bundle-details.png",
+      "/images/SnappMarket/desktop-bundle.png",
+      "/images/SnappMarket/mobile-bundle.png",
+      "/images/SnappMarket/mobile-bundle-details.png",
+      "/images/SnappMarket/desktop-bundle-details.png",
     ],
   },
   {
@@ -55,9 +55,9 @@ export const portfolioItems = [
       "Mentored interns and established code review practices, reducing post-deployment issues by 30%.",
     ],
     screenshots: [
-      "/images/shab/desktop-home.png",
-      "/images/shab/mobile-home.png",
-      "/images/shab/mobile-popular-cities.png",
+      "/images/Shab/desktop-home.png",
+      "/images/Shab/mobile-home.png",
+      "/images/Shab/mobile-popular-cities.png",
       "/images/Shab/desktop-last-minute.png",
     ],
   },
