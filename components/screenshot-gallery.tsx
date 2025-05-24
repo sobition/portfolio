@@ -1,50 +1,53 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import Icon from "./icon"
-import { cn } from "@/lib/utils"
+import { useState } from "react";
+import Image from "next/image";
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import Icon from "./icon";
+import { cn } from "@/lib/utils";
 
 interface ScreenshotGalleryProps {
   screenshots: {
-    url: string
-    title: string
-    description?: string
-  }[]
-  companyName: string
+    url: string;
+    title: string;
+    description?: string;
+  }[];
+  companyName: string;
 }
 
-export function ScreenshotGallery({ screenshots, companyName }: ScreenshotGalleryProps) {
-  const [open, setOpen] = useState(false)
-  const [activeIndex, setActiveIndex] = useState(0)
+export function ScreenshotGallery({
+  screenshots,
+  companyName,
+}: ScreenshotGalleryProps) {
+  const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handlePrevious = () => {
-    setActiveIndex((prev) => (prev === 0 ? screenshots.length - 1 : prev - 1))
-  }
+    setActiveIndex((prev) => (prev === 0 ? screenshots.length - 1 : prev - 1));
+  };
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev === screenshots.length - 1 ? 0 : prev + 1))
-  }
+    setActiveIndex((prev) => (prev === screenshots.length - 1 ? 0 : prev + 1));
+  };
 
   const openLightbox = (index: number) => {
-    setActiveIndex(index)
-    setOpen(true)
-  }
+    setActiveIndex(index);
+    setOpen(true);
+  };
 
   // Handle keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowLeft") {
-      handlePrevious()
+      handlePrevious();
     } else if (e.key === "ArrowRight") {
-      handleNext()
+      handleNext();
     } else if (e.key === "Escape") {
-      setOpen(false)
+      setOpen(false);
     }
-  }
+  };
 
   return (
     <div className="space-y-4" onKeyDown={handleKeyDown} tabIndex={0}>
@@ -56,23 +59,25 @@ export function ScreenshotGallery({ screenshots, companyName }: ScreenshotGaller
             className={cn(
               "relative group rounded-md overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg border border-gray-800",
               screenshots.length === 1 ? "col-span-2 row-span-2" : "",
-              screenshots.length === 3 && index === 0 ? "col-span-2" : "",
+              screenshots.length === 3 && index === 0 ? "col-span-2" : ""
             )}
             onClick={() => openLightbox(index)}
           >
-            <div className="relative aspect-video">
+            <div className="relative aspect-video bg-[#EAEAEA]">
               <Image
                 src={screenshot.url || "/placeholder.svg"}
                 alt={`${companyName} - ${screenshot.title}`}
                 fill
-                className="object-cover"
+                className="object-contain"
               />
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <Icon name="external-link" size={32} className="text-white" />
               </div>
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 transform translate-y-full group-hover:translate-y-0 transition-transform">
-              <p className="text-white text-sm font-medium truncate">{screenshot.title}</p>
+              <p className="text-white text-sm font-medium truncate">
+                {screenshot.title}
+              </p>
             </div>
           </div>
         ))}
@@ -96,7 +101,7 @@ export function ScreenshotGallery({ screenshots, companyName }: ScreenshotGaller
       <Dialog
         open={open}
         onOpenChange={(newOpen) => {
-          setOpen(newOpen)
+          setOpen(newOpen);
         }}
       >
         <DialogContent className="max-w-5xl w-[90vw] h-[80vh] p-0 bg-[#0a0d1d] border-gray-800">
@@ -120,10 +125,13 @@ export function ScreenshotGallery({ screenshots, companyName }: ScreenshotGaller
             </div>
 
             {/* Main image */}
-            <div className="flex-1 relative overflow-hidden">
+            <div className="flex-1 relative overflow-hidden bg-[#10172a]">
               <div className="absolute inset-0 flex items-center justify-center">
                 <Image
-                  src={screenshots[activeIndex]?.url || "/placeholder.svg?height=800&width=1200"}
+                  src={
+                    screenshots[activeIndex]?.url ||
+                    "/placeholder.svg?height=800&width=1200"
+                  }
                   alt={screenshots[activeIndex]?.title || "Screenshot"}
                   fill
                   className="object-contain"
@@ -133,7 +141,9 @@ export function ScreenshotGallery({ screenshots, companyName }: ScreenshotGaller
               {/* Description overlay */}
               {screenshots[activeIndex]?.description && (
                 <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 transform transition-transform">
-                  <p className="text-white text-sm">{screenshots[activeIndex].description}</p>
+                  <p className="text-white text-sm">
+                    {screenshots[activeIndex].description}
+                  </p>
                 </div>
               )}
 
@@ -164,7 +174,9 @@ export function ScreenshotGallery({ screenshots, companyName }: ScreenshotGaller
                     key={index}
                     className={cn(
                       "relative flex-shrink-0 w-20 h-12 rounded-md overflow-hidden cursor-pointer border-2",
-                      activeIndex === index ? "border-[#4285f4]" : "border-transparent",
+                      activeIndex === index
+                        ? "border-[#4285f4]"
+                        : "border-transparent"
                     )}
                     onClick={() => setActiveIndex(index)}
                   >
@@ -172,7 +184,7 @@ export function ScreenshotGallery({ screenshots, companyName }: ScreenshotGaller
                       src={screenshot.url || "/placeholder.svg"}
                       alt={screenshot.title}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 ))}
@@ -182,5 +194,5 @@ export function ScreenshotGallery({ screenshots, companyName }: ScreenshotGaller
         </DialogContent>
       </Dialog>
     </div>
-  )
+  );
 }

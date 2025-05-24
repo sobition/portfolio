@@ -2,16 +2,9 @@
 
 import type React from "react";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Phone, Mail } from "lucide-react";
-import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import SkillsSection from "./skills-section";
-import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
-import { GithubIcon } from "@/components/icons/GithubIcon";
 import Header from "../components/header";
 import { Inter } from "next/font/google";
 import ExperienceSection from "@/components/experience-section";
@@ -112,7 +105,7 @@ export default function Portfolio() {
         <ExperienceSection />
 
         {/* Projects Section */}
-        <ProjectsSection ref={projectsRef} />
+        {/* <ProjectsSection ref={projectsRef} /> */}
 
         {/* Certificates Section */}
         <CertificatesSection ref={certificatesRef} />

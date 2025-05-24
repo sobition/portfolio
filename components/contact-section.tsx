@@ -3,6 +3,52 @@ import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
 
 const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
+  const [form, setForm] = React.useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = React.useState<null | "success" | "error">(null);
+  const [submitting, setSubmitting] = React.useState(false);
+
+  const isFormValid =
+    form.name.trim() &&
+    form.email.trim() &&
+    form.subject.trim() &&
+    form.message.trim();
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setForm((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+    setSubmitting(true);
+    setStatus(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setForm({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <section
       ref={ref}
@@ -40,7 +86,7 @@ const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
             delay={200}
             className="lg:w-1/2"
           >
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-gray-300 block">
@@ -49,6 +95,8 @@ const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
                   <input
                     type="text"
                     id="name"
+                    value={form.name}
+                    onChange={handleChange}
                     className="w-full bg-[#0f1631] border border-gray-700 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#4285f4]"
                     placeholder="Your name"
                   />
@@ -60,6 +108,8 @@ const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
                   <input
                     type="email"
                     id="email"
+                    value={form.email}
+                    onChange={handleChange}
                     className="w-full bg-[#0f1631] border border-gray-700 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#4285f4]"
                     placeholder="Your email"
                   />
@@ -72,6 +122,8 @@ const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
                 <input
                   type="text"
                   id="subject"
+                  value={form.subject}
+                  onChange={handleChange}
                   className="w-full bg-[#0f1631] border border-gray-700 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#4285f4]"
                   placeholder="Subject"
                 />
@@ -82,14 +134,28 @@ const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
                 </label>
                 <textarea
                   id="message"
+                  value={form.message}
+                  onChange={handleChange}
                   className="w-full bg-[#0f1631] border border-gray-700 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#4285f4]"
                   placeholder="Your message"
                   rows={4}
                 ></textarea>
               </div>
-              <Button className="bg-[#4285f4] hover:bg-[#3b77db] text-white px-8 py-6">
-                Send
+              <Button
+                className="bg-[#4285f4] hover:bg-[#3b77db] text-white px-8 py-6"
+                type="submit"
+                disabled={!isFormValid || submitting}
+              >
+                {submitting ? "Sending..." : "Send"}
               </Button>
+              {status === "success" && (
+                <div className="text-green-400 text-sm">Message sent!</div>
+              )}
+              {status === "error" && (
+                <div className="text-red-400 text-sm">
+                  Failed to send. Please try again.
+                </div>
+              )}
             </form>
           </AnimateOnScroll>
         </div>

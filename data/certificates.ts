@@ -5,7 +5,7 @@ export const certificates = [
     file: "/certificates/effective_communication.pdf",
     provider_logo: "/certificates/oreilly.jpeg",
     description:
-      "Learn effective communication skills to enhance your professional and personal interactions.",
+      "Effective communication for professional and personal growth.",
     issued: "2024-09",
   },
   {
@@ -36,7 +36,7 @@ export const certificates = [
     issued: "2023-12",
   },
   {
-    title: "Understanding TypeScript- 2022 Edition",
+    title: "Understanding TypeScript",
     link: "https://ude.my/UC-f029bca5-5e9c-4f31-9e3a-e46a01cc28a7",
     provider_logo: "/certificates/udemy.png",
     description:
@@ -73,7 +73,7 @@ export const certificates = [
     issued: "2019-01",
   },
   {
-    title: "Complete ReactJs web development course",
+    title: "ReactJs web development",
     link: "http://ude.my/UC-DWM2X5G5",
     provider_logo: "/certificates/udemy.png",
     description: "Comprehensive course on ReactJS for web development.",

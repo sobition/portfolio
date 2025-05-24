@@ -1,11 +1,26 @@
-export const experiences = [
+interface Experience {
+  id: number;
+  company: string;
+  companyUrl: string;
+  location: string;
+  position: string;
+  period: string;
+  achievements: string[];
+  technologies: string[];
+  screenshots: {
+    url: string;
+    title: string;
+    description: string;
+  }[];
+}
+export const experiences: Experience[] = [
   {
     id: 1,
     company: "Catawiki",
     companyUrl: "https://www.catawiki.com",
     location: "Amsterdam",
     position: "Senior Frontend Engineer",
-    period: "March 2024 - Present",
+    period: "July 2022 - Present",
     achievements: [
       "Piloted the seamless migration of lot submission pages, implementing performance enhancements and structured deprecation strategies, leading to a 15% improvement in page load times.",
       "Optimized frontend performance by refining layout-sharing mechanisms and implementing caching strategies, reducing redundant requests by 30% and boosting site responsiveness.",
@@ -28,87 +43,93 @@ export const experiences = [
     ],
     screenshots: [
       {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Lot Submission Page",
-        description:
-          "Redesigned lot submission flow with improved UX and performance optimizations.",
+        url: "/images/catawiki/smart-fill.png",
+        title: "Smart Fill",
+        description: "Smart fill feature for lot submission",
       },
       {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Porsche Droomruil Campaign",
-        description:
-          "B2B campaign landing page with interactive elements and personalized content.",
+        url: "/images/catawiki/resubmit-sold-lots.png",
+        title: "Resubmit Sold Lots",
+        description: "Feature for resubmitting sold lots",
       },
       {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Performance Dashboard",
-        description:
-          "Internal dashboard showing performance metrics and improvements.",
+        url: "/images/catawiki/mobile-seller-landing.jpeg",
+        title: "Mobile Seller Landing",
+        description: "Mobile view of the seller landing page",
       },
       {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Caching Architecture",
-        description:
-          "Diagram of the implemented caching strategy that reduced redundant requests.",
+        url: "/images/catawiki/porsche-campaign.png",
+        title: "Porsche Campaign",
+        description: "Campaign page for Porsche",
       },
       {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Mobile Optimization",
-        description:
-          "Mobile-optimized views with responsive design and touch-friendly interactions.",
+        url: "/images/catawiki/create-lot.png",
+        title: "Create Lot",
+        description: "Create lot page",
       },
-    ],
-  },
-  {
-    id: 2,
-    company: "Catawiki",
-    companyUrl: "https://www.catawiki.com",
-    location: "Amsterdam",
-    position: "Frontend Engineer",
-    period: "July 2022 - March 2024",
-    achievements: [
-      "Refactored core components of the codebase, introducing modular architecture and improved documentation, reducing onboarding time for new developers by 40% and enhancing maintainability.",
-      "Developed an end-to-end testing suite with Java Selenium, reducing QA backlog by 20% and cutting production bugs in critical workflows by 60%.",
-      "Migrated frontend components from Ruby templates to a standalone Next.js repository, cutting build times by 70% (from 20 minutes to 6 minutes) and improving CI/CD efficiency.",
-      "Owned a shared runtime library utilized by 10+ microservices, driving consistency and reducing redundant code by 35%.",
-    ],
-    technologies: [
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Ruby on Rails",
-      "SQL",
-      "REST APIs",
-      "Playwright",
-      "Jest",
-      "i18n",
-      "SCSS",
-      "Git",
-    ],
-    screenshots: [
+      {
+        url: "/images/catawiki/lot-preview.png",
+        title: "Lot Preview",
+        description: "Preview of a lot",
+      },
       {
         url: "/placeholder.svg?height=600&width=800",
         title: "Component Library",
         description:
           "Modular component library with documentation and usage examples.",
       },
-      {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Testing Dashboard",
-        description:
-          "End-to-end testing dashboard showing test coverage and results.",
-      },
-      {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Next.js Migration",
-        description:
-          "Architecture diagram of the Ruby to Next.js migration strategy.",
-      },
     ],
   },
+  // {
+  //   id: 2,
+  //   company: "Catawiki",
+  //   companyUrl: "https://www.catawiki.com",
+  //   location: "Amsterdam",
+  //   position: "Frontend Engineer",
+  //   period: "July 2022 - March 2024",
+  //   achievements: [
+  //     "Refactored core components of the codebase, introducing modular architecture and improved documentation, reducing onboarding time for new developers by 40% and enhancing maintainability.",
+  //     "Developed an end-to-end testing suite with Java Selenium, reducing QA backlog by 20% and cutting production bugs in critical workflows by 60%.",
+  //     "Migrated frontend components from Ruby templates to a standalone Next.js repository, cutting build times by 70% (from 20 minutes to 6 minutes) and improving CI/CD efficiency.",
+  //     "Owned a shared runtime library utilized by 10+ microservices, driving consistency and reducing redundant code by 35%.",
+  //   ],
+  //   technologies: [
+  //     "JavaScript",
+  //     "TypeScript",
+  //     "React",
+  //     "Next.js",
+  //     "Ruby on Rails",
+  //     "SQL",
+  //     "REST APIs",
+  //     "Playwright",
+  //     "Jest",
+  //     "i18n",
+  //     "SCSS",
+  //     "Git",
+  //   ],
+  //   screenshots: [
+  //     {
+  //       url: "/placeholder.svg?height=600&width=800",
+  //       title: "Component Library",
+  //       description:
+  //         "Modular component library with documentation and usage examples.",
+  //     },
+  //     {
+  //       url: "/placeholder.svg?height=600&width=800",
+  //       title: "Testing Dashboard",
+  //       description:
+  //         "End-to-end testing dashboard showing test coverage and results.",
+  //     },
+  //     {
+  //       url: "/placeholder.svg?height=600&width=800",
+  //       title: "Next.js Migration",
+  //       description:
+  //         "Architecture diagram of the Ruby to Next.js migration strategy.",
+  //     },
+  //   ],
+  // },
   {
-    id: 3,
+    id: 2,
     company: "SnappMarket",
     companyUrl: "https://snapp.market",
     location: "Tehran",
@@ -137,38 +158,34 @@ export const experiences = [
     ],
     screenshots: [
       {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Cart System Architecture",
-        description:
-          "Server-side cart system with client-side fallback implementation.",
+        url: "/images/snappmarket/desktop-bundle.png",
+        title: "Desktop Bundle",
+        description: "Desktop view of the bundle feature",
       },
       {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Bundle Discount Feature",
-        description:
-          "UI for the bundle discount feature showing cross-selling opportunities.",
+        url: "/images/snappmarket/mobile-bundle.png",
+        title: "Mobile Bundle",
+        description: "Mobile view of the bundle feature",
       },
       {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "SEO Dashboard",
-        description:
-          "Dashboard showing SEO improvements and organic traffic growth.",
+        url: "/images/snappmarket/mobile-bundle-details.png",
+        title: "Mobile Bundle Details",
+        description: "Detailed view of the mobile bundle feature",
       },
       {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "CI/CD Pipeline",
-        description:
-          "Automated CI/CD pipeline with deployment stages and quality gates.",
+        url: "/images/snappmarket/desktop-bundle-details.png",
+        title: "Desktop Bundle Details",
+        description: "Detailed view of the desktop bundle feature",
       },
     ],
   },
   {
-    id: 4,
+    id: 3,
     company: "Shab",
     companyUrl: "https://shab.ir",
     location: "Tehran",
     position: "Senior Front-End Engineer",
-    period: "May 2020 - August 2021",
+    period: "August 2018 - August 2021",
     achievements: [
       "Enhanced conversion rates by optimizing UI flows, increasing traffic-to-payment conversions by 15%.",
       "Strengthened code quality by establishing thorough code review practices, reducing post-deployment issues by over 30%.",
@@ -192,76 +209,78 @@ export const experiences = [
     ],
     screenshots: [
       {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Optimized Checkout Flow",
-        description:
-          "Redesigned checkout flow that improved conversion rates by 15%.",
+        url: "/images/shab/desktop-home.png",
+        title: "Desktop Home",
+        description: "Desktop view of the Shab homepage",
       },
       {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Code Review Process",
-        description:
-          "Documentation of the code review process implemented to improve quality.",
+        url: "/images/shab/mobile-home.png",
+        title: "Mobile Home",
+        description: "Mobile view of the Shab homepage",
       },
       {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "SSR Implementation",
-        description:
-          "Server-Side Rendering architecture that improved SEO and page load times.",
+        url: "/images/shab/mobile-popular-cities.png",
+        title: "Mobile Popular Cities",
+        description: "Mobile view of the popular cities section",
+      },
+      {
+        url: "/images/Shab/desktop-last-minute.png",
+        title: "Desktop Last Minute",
+        description: "Desktop view of the last minute deals section",
       },
     ],
   },
+  // {
+  //   id: 5,
+  //   company: "Shab",
+  //   companyUrl: "https://shab.ir",
+  //   location: "Tehran",
+  //   position: "Front-End Engineer",
+  //   period: "August 2018 - May 2020",
+  //   achievements: [
+  //     "Revamped website architecture with a focus on uptime and performance, ensuring 99.9% site availability.",
+  //     "Designed and launched a React-based admin panel, improving efficiency and reducing admin task completion time by 40%.",
+  //     "Developed a B2B dashboard with React and Reactstrap, streamlining client account management and boosting user retention.",
+  //   ],
+  //   technologies: [
+  //     "JavaScript",
+  //     "Flow.js",
+  //     "React",
+  //     "Redux",
+  //     "Styled Components",
+  //     "Jest",
+  //     "HTML",
+  //     "CSS",
+  //     "SCSS",
+  //     "jQuery",
+  //     "Git",
+  //     "Node.js",
+  //     "Express.js",
+  //     "Reactstrap",
+  //   ],
+  //   screenshots: [
+  //     {
+  //       url: "/placeholder.svg?height=600&width=800",
+  //       title: "Website Architecture",
+  //       description:
+  //         "Revamped website architecture focusing on uptime and performance.",
+  //     },
+  //     {
+  //       url: "/placeholder.svg?height=600&width=800",
+  //       title: "Admin Panel",
+  //       description:
+  //         "React-based admin panel with improved efficiency and usability.",
+  //     },
+  //     {
+  //       url: "/placeholder.svg?height=600&width=800",
+  //       title: "B2B Dashboard",
+  //       description:
+  //         "Client account management dashboard with analytics and reporting features.",
+  //     },
+  //   ],
+  // },
   {
-    id: 5,
-    company: "Shab",
-    companyUrl: "https://shab.ir",
-    location: "Tehran",
-    position: "Front-End Engineer",
-    period: "August 2018 - May 2020",
-    achievements: [
-      "Revamped website architecture with a focus on uptime and performance, ensuring 99.9% site availability.",
-      "Designed and launched a React-based admin panel, improving efficiency and reducing admin task completion time by 40%.",
-      "Developed a B2B dashboard with React and Reactstrap, streamlining client account management and boosting user retention.",
-    ],
-    technologies: [
-      "JavaScript",
-      "Flow.js",
-      "React",
-      "Redux",
-      "Styled Components",
-      "Jest",
-      "HTML",
-      "CSS",
-      "SCSS",
-      "jQuery",
-      "Git",
-      "Node.js",
-      "Express.js",
-      "Reactstrap",
-    ],
-    screenshots: [
-      {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Website Architecture",
-        description:
-          "Revamped website architecture focusing on uptime and performance.",
-      },
-      {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Admin Panel",
-        description:
-          "React-based admin panel with improved efficiency and usability.",
-      },
-      {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "B2B Dashboard",
-        description:
-          "Client account management dashboard with analytics and reporting features.",
-      },
-    ],
-  },
-  {
-    id: 6,
+    id: 4,
     company: "Jahan Gostar",
     companyUrl: "https://jahangostar.com",
     location: "Tehran",
@@ -285,18 +304,6 @@ export const experiences = [
       "jQuery",
       "Git",
     ],
-    screenshots: [
-      {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "B2B Panel Redesign",
-        description:
-          "Redesigned B2B panel with Ant Design and React components.",
-      },
-      {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Component Styling System",
-        description: "SCSS modules organization for improved maintainability.",
-      },
-    ],
+    screenshots: [],
   },
 ];

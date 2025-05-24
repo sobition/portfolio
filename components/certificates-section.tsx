@@ -8,6 +8,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper/modules";
 
+import "./certificates-section.css";
+
 const CertificatesSection = React.forwardRef<HTMLElement>((_, ref) => {
   return (
     <section ref={ref} id="certificates" className="py-20 bg-[#0a0d1d]">
@@ -57,7 +59,7 @@ const CertificatesSection = React.forwardRef<HTMLElement>((_, ref) => {
                     <h3 className="text-l font-bold mb-2">
                       {certificate.title}
                     </h3>
-                    <p className="text-gray-300 mb-4">
+                    <p className="text-gray-300 mb-4 text-sm">
                       {certificate.description ||
                         "Certificate description not available."}
                     </p>
