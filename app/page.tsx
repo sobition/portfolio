@@ -8,7 +8,7 @@ import SkillsSection from "./skills-section";
 import Header from "../components/header";
 import { Inter } from "next/font/google";
 import ExperienceSection from "@/components/experience-section";
-import ProjectsSection from "@/components/projects-section";
+// import ProjectsSection from "@/components/projects-section";
 import CertificatesSection from "@/components/certificates-section";
 import ContactSection from "@/components/contact-section";
 import AboutMeSection from "@/components/about-me-section";
@@ -32,9 +32,9 @@ export default function Portfolio() {
   const experienceRef = useRef<HTMLElement>(
     null
   ) as React.MutableRefObject<HTMLElement | null>;
-  const projectsRef = useRef<HTMLElement>(
-    null
-  ) as React.MutableRefObject<HTMLElement | null>;
+  // const projectsRef = useRef<HTMLElement>(
+  //   null
+  // ) as React.MutableRefObject<HTMLElement | null>;
   const certificatesRef = useRef<HTMLElement>(
     null
   ) as React.MutableRefObject<HTMLElement | null>;
@@ -62,7 +62,7 @@ export default function Portfolio() {
         const hash = window.location.hash;
         if (hash === "#about") scrollToSection(aboutRef);
         if (hash === "#experience") scrollToSection(experienceRef);
-        if (hash === "#projects") scrollToSection(projectsRef);
+        // if (hash === "#projects") scrollToSection(projectsRef);
         if (hash === "#certificates") scrollToSection(certificatesRef);
         if (hash === "#skills") scrollToSection(skillsRef);
         if (hash === "#contact") scrollToSection(contactRef);
@@ -85,7 +85,7 @@ export default function Portfolio() {
         scrollToSection={scrollToSection}
         aboutRef={aboutRef}
         experienceRef={experienceRef}
-        projectsRef={projectsRef}
+        // projectsRef={projectsRef}
         certificatesRef={certificatesRef}
         skillsRef={skillsRef}
         contactRef={contactRef}
@@ -102,7 +102,7 @@ export default function Portfolio() {
         {/* About Me Section */}
         <AboutMeSection ref={aboutRef} />
 
-        <ExperienceSection />
+        <ExperienceSection ref={experienceRef} />
 
         {/* Projects Section */}
         {/* <ProjectsSection ref={projectsRef} /> */}

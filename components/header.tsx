@@ -5,7 +5,7 @@ interface HeaderProps {
   scrollToSection: (ref: React.RefObject<HTMLElement | null>) => void;
   aboutRef: React.RefObject<HTMLElement | null>;
   experienceRef: React.RefObject<HTMLElement | null>;
-  projectsRef: React.RefObject<HTMLElement | null>;
+  // projectsRef: React.RefObject<HTMLElement | null>;
   certificatesRef: React.RefObject<HTMLElement | null>;
   skillsRef: React.RefObject<HTMLElement | null>;
   contactRef: React.RefObject<HTMLElement | null>;
@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({
   scrollToSection,
   aboutRef,
   experienceRef,
-  projectsRef,
+  // projectsRef,
   certificatesRef,
   skillsRef,
   contactRef,
@@ -41,12 +41,12 @@ const Header: React.FC<HeaderProps> = ({
           >
             Experience
           </button>
-          <button
+          {/* <button
             onClick={() => scrollToSection(projectsRef)}
             className="hover:text-white transition-colors"
           >
             Projects
-          </button>
+          </button> */}
           <button
             onClick={() => scrollToSection(certificatesRef)}
             className="hover:text-white transition-colors"

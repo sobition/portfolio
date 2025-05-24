@@ -81,9 +81,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </p>
 
         <div className="flex flex-wrap gap-4 pt-4">
-          <Button className="bg-[#4285f4] hover:bg-[#3b77db] text-white px-8 py-6">
-            Download CV
-          </Button>
+          <a
+            href="/Sobhan%20Aminnejad%20-%20CV.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            tabIndex={-1}
+          >
+            <Button
+              className="bg-[#4285f4] hover:bg-[#3b77db] text-white px-8 py-6"
+              asChild
+            >
+              <span>Download CV</span>
+            </Button>
+          </a>
           <Button
             variant="outline"
             className="border-[#25b6d2] text-[#25b6d2] hover:bg-[#25b6d2]/10 px-8 py-6"

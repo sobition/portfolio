@@ -6,14 +6,24 @@ import { Badge } from "./ui/badge";
 import { ScreenshotGallery } from "@/components/screenshot-gallery";
 import { experiences } from "@/data/experiences";
 
-const ExperienceSection: React.FC = () => {
+const ExperienceSection = React.forwardRef<
+  HTMLElement,
+  React.HTMLAttributes<HTMLElement>
+>((props, ref) => {
   const [activeTimelineItem, setActiveTimelineItem] = useState<number | null>(
     null
   );
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   return (
-    <section id="experience" className="py-20 bg-[#0a0d1d]">
+    <section
+      ref={ref}
+      id="experience"
+      className={
+        "py-20 bg-[#0a0d1d]" + (props.className ? ` ${props.className}` : "")
+      }
+      {...props}
+    >
       <div className="container mx-auto px-4">
         <AnimateOnScroll animation="fade-up">
           <h2 className="text-5xl font-bold mb-6">Experience</h2>
@@ -33,8 +43,8 @@ const ExperienceSection: React.FC = () => {
                 isMobile
                   ? "ml-8"
                   : index % 2 === 0
-                  ? "md:pr-12 md:text-right"
-                  : "md:pl-12 ml-8 md:ml-auto"
+                    ? "md:pr-12 md:text-right"
+                    : "md:pl-12 ml-8 md:ml-auto"
               } ${!isMobile ? "md:w-1/2" : ""}`}
             >
               <AnimateOnScroll
@@ -42,8 +52,8 @@ const ExperienceSection: React.FC = () => {
                   isMobile
                     ? "fade-up"
                     : index % 2 === 0
-                    ? "fade-right"
-                    : "fade-left"
+                      ? "fade-right"
+                      : "fade-left"
                 }
                 delay={index * 100}
                 className="relative"
@@ -61,8 +71,8 @@ const ExperienceSection: React.FC = () => {
                   const positionClass = isMobile
                     ? "left-0"
                     : index % 2 === 0
-                    ? "right-0 md:-right-4"
-                    : "-left-12 md:-left-4";
+                      ? "right-0 md:-right-4"
+                      : "-left-12 md:-left-4";
                   if (logoExists) {
                     return (
                       <div
@@ -173,6 +183,8 @@ const ExperienceSection: React.FC = () => {
       </div>
     </section>
   );
-};
+});
+
+ExperienceSection.displayName = "ExperienceSection";
 
 export default ExperienceSection;
