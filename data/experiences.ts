@@ -22,10 +22,11 @@ export const experiences: Experience[] = [
     position: "Senior Frontend Engineer",
     period: "July 2022 - Present",
     achievements: [
-      "Piloted the seamless migration of lot submission pages, implementing performance enhancements and structured deprecation strategies, leading to a 15% improvement in page load times.",
-      "Optimized frontend performance by refining layout-sharing mechanisms and implementing caching strategies, reducing redundant requests by 30% and boosting site responsiveness.",
-      "Spearheaded a high-impact B2B campaign (Porsche Droomruil), leveraging data-driven UX improvements that increased user engagement by 20%.",
-      "Actively contributed to backend Ruby on Rails development, accelerating feature delivery by 25% and improving team efficiency.",
+      "Led cw-assets to @catawiki/layout migration, reducing build times by 70%, improving Core Web Vitals, and unblocking team-wide Next.js upgrades through systematic deprecation planning and cross-team collaboration.",
+      "Unified Specifications Platform across Seller UI and Auctioneer Tools, eliminating code duplication and enabling new specification rules to ship instantly to all surfaces.",
+      "Pioneered AI-assisted development workflows (Figma × Copilot integration, GitHub Copilot instructions) adopted by 3+ engineers, accelerating Node.js migration and reducing PR review cycles.",
+      "Shipped One-Click Resubmission feature end-to-end using TDD and AI-accelerated tooling, streamlining repeat supply workflows while mentoring backend engineers.",
+      "Spearheaded high-impact B2B campaign (Porsche Droomruil), leveraging data-driven UX improvements that increased user engagement by 20%.",
     ],
     technologies: [
       "JavaScript",
@@ -158,22 +159,22 @@ export const experiences: Experience[] = [
     ],
     screenshots: [
       {
-        url: "/images/snappmarket/desktop-bundle.png",
+        url: "/images/SnappMarket/desktop-bundle.png",
         title: "Desktop Bundle",
         description: "Desktop view of the bundle feature",
       },
       {
-        url: "/images/snappmarket/mobile-bundle.png",
+        url: "/images/SnappMarket/mobile-bundle.png",
         title: "Mobile Bundle",
         description: "Mobile view of the bundle feature",
       },
       {
-        url: "/images/snappmarket/mobile-bundle-details.png",
+        url: "/images/SnappMarket/mobile-bundle-details.png",
         title: "Mobile Bundle Details",
         description: "Detailed view of the mobile bundle feature",
       },
       {
-        url: "/images/snappmarket/desktop-bundle-details.png",
+        url: "/images/SnappMarket/desktop-bundle-details.png",
         title: "Desktop Bundle Details",
         description: "Detailed view of the desktop bundle feature",
       },
@@ -209,17 +210,17 @@ export const experiences: Experience[] = [
     ],
     screenshots: [
       {
-        url: "/images/shab/desktop-home.png",
+        url: "/images/Shab/desktop-home.png",
         title: "Desktop Home",
         description: "Desktop view of the Shab homepage",
       },
       {
-        url: "/images/shab/mobile-home.png",
+        url: "/images/Shab/mobile-home.png",
         title: "Mobile Home",
         description: "Mobile view of the Shab homepage",
       },
       {
-        url: "/images/shab/mobile-popular-cities.png",
+        url: "/images/Shab/mobile-popular-cities.png",
         title: "Mobile Popular Cities",
         description: "Mobile view of the popular cities section",
       },
