@@ -129,7 +129,7 @@ const ExperienceSection = React.forwardRef<
                   <Tabs defaultValue="achievements" className="w-full">
                     <TabsList
                       className={`grid ${
-                        exp.screenshots && exp.screenshots.length > 0
+                        exp.media && exp.media.length > 0
                           ? "grid-cols-3"
                           : "grid-cols-2"
                       } mb-4`}
@@ -140,10 +140,8 @@ const ExperienceSection = React.forwardRef<
                       <TabsTrigger value="technologies">
                         Technologies
                       </TabsTrigger>
-                      {exp.screenshots && exp.screenshots.length > 0 && (
-                        <TabsTrigger value="screenshots">
-                          Screenshots
-                        </TabsTrigger>
+                      {exp.media && exp.media.length > 0 && (
+                        <TabsTrigger value="media">Media</TabsTrigger>
                       )}
                     </TabsList>
                     <TabsContent value="achievements" className="mt-0">
@@ -166,10 +164,10 @@ const ExperienceSection = React.forwardRef<
                         ))}
                       </div>
                     </TabsContent>
-                    {exp.screenshots && exp.screenshots.length > 0 && (
-                      <TabsContent value="screenshots" className="mt-0">
+                    {exp.media && exp.media.length > 0 && (
+                      <TabsContent value="media" className="mt-0">
                         <ScreenshotGallery
-                          screenshots={exp.screenshots}
+                          screenshots={exp.media}
                           companyName={exp.company}
                         />
                       </TabsContent>

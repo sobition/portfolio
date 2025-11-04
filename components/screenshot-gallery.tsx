@@ -4,7 +4,12 @@ import type React from "react";
 
 import { useState } from "react";
 import Image from "next/image";
-import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogClose,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import Icon from "./icon";
 import { cn } from "@/lib/utils";
@@ -14,6 +19,7 @@ interface ScreenshotGalleryProps {
     url: string;
     title: string;
     description?: string;
+    type?: "image" | "gif";
   }[];
   companyName: string;
 }
@@ -69,7 +75,13 @@ export function ScreenshotGallery({
                 alt={`${companyName} - ${screenshot.title}`}
                 fill
                 className="object-contain"
+                unoptimized={screenshot.type === "gif"}
               />
+              {screenshot.type === "gif" && (
+                <div className="absolute top-2 right-2 bg-[#4285f4] text-white text-xs px-2 py-1 rounded-full font-semibold">
+                  GIF
+                </div>
+              )}
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <Icon name="external-link" size={32} className="text-white" />
               </div>
@@ -83,7 +95,7 @@ export function ScreenshotGallery({
         ))}
       </div>
 
-      {/* Show "View All" button if more than 4 screenshots */}
+      {/* Show "View All" button if more than 4 items */}
       {screenshots.length > 4 && (
         <div className="text-center">
           <Button
@@ -92,7 +104,7 @@ export function ScreenshotGallery({
             className="border-[#4285f4] text-[#4285f4] hover:bg-[#4285f4]/10"
             onClick={() => setOpen(true)}
           >
-            View All ({screenshots.length}) Screenshots
+            View All ({screenshots.length}) Media
           </Button>
         </div>
       )}
@@ -108,9 +120,9 @@ export function ScreenshotGallery({
           <div className="relative h-full flex flex-col">
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-800">
-              <h3 className="text-lg font-semibold">
+              <DialogTitle className="text-lg font-semibold">
                 {companyName} - {screenshots[activeIndex]?.title}
-              </h3>
+              </DialogTitle>
               <DialogClose asChild>
                 <Button
                   variant="ghost"
@@ -135,8 +147,15 @@ export function ScreenshotGallery({
                   alt={screenshots[activeIndex]?.title || "Screenshot"}
                   fill
                   className="object-contain"
+                  unoptimized={screenshots[activeIndex]?.type === "gif"}
                 />
               </div>
+
+              {screenshots[activeIndex]?.type === "gif" && (
+                <div className="absolute top-4 right-4 bg-[#4285f4] text-white text-sm px-3 py-1 rounded-full font-semibold">
+                  GIF
+                </div>
+              )}
 
               {/* Description overlay */}
               {screenshots[activeIndex]?.description && (
@@ -185,6 +204,7 @@ export function ScreenshotGallery({
                       alt={screenshot.title}
                       fill
                       className="object-contain"
+                      unoptimized={screenshot.type === "gif"}
                     />
                   </div>
                 ))}

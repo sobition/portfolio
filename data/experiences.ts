@@ -7,10 +7,11 @@ interface Experience {
   period: string;
   achievements: string[];
   technologies: string[];
-  screenshots: {
+  media: {
     url: string;
     title: string;
     description: string;
+    type?: "image" | "gif";
   }[];
 }
 export const experiences: Experience[] = [
@@ -42,16 +43,19 @@ export const experiences: Experience[] = [
       "SCSS",
       "Git",
     ],
-    screenshots: [
+    media: [
       {
-        url: "/images/catawiki/smart-fill.png",
-        title: "Smart Fill",
-        description: "Smart fill feature for lot submission",
+        url: "/images/catawiki/resubmit.gif",
+        title: "Resubmit Flow",
+        description: "One-click resubmission feature demo",
+        type: "gif",
       },
+
       {
-        url: "/images/catawiki/resubmit-sold-lots.png",
-        title: "Resubmit Sold Lots",
-        description: "Feature for resubmitting sold lots",
+        url: "/images/catawiki/autofill.gif",
+        title: "Autofill Flow",
+        description: "Smart autofill feature demonstration",
+        type: "gif",
       },
       {
         url: "/images/catawiki/mobile-seller-landing.jpeg",
@@ -64,20 +68,14 @@ export const experiences: Experience[] = [
         description: "Campaign page for Porsche",
       },
       {
-        url: "/images/catawiki/create-lot.png",
-        title: "Create Lot",
-        description: "Create lot page",
+        url: "/images/catawiki/smart-fill.png",
+        title: "Smart Fill",
+        description: "Smart fill feature for lot submission",
       },
       {
         url: "/images/catawiki/lot-preview.png",
         title: "Lot Preview",
         description: "Preview of a lot",
-      },
-      {
-        url: "/placeholder.svg?height=600&width=800",
-        title: "Component Library",
-        description:
-          "Modular component library with documentation and usage examples.",
       },
     ],
   },
@@ -157,7 +155,7 @@ export const experiences: Experience[] = [
       "Express.js",
       "REST APIs",
     ],
-    screenshots: [
+    media: [
       {
         url: "/images/SnappMarket/desktop-bundle.png",
         title: "Desktop Bundle",
@@ -208,7 +206,7 @@ export const experiences: Experience[] = [
       "Node.js",
       "Express.js",
     ],
-    screenshots: [
+    media: [
       {
         url: "/images/Shab/desktop-home.png",
         title: "Desktop Home",
@@ -305,6 +303,6 @@ export const experiences: Experience[] = [
       "jQuery",
       "Git",
     ],
-    screenshots: [],
+    media: [],
   },
 ];
