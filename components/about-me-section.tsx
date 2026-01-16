@@ -16,9 +16,7 @@ const AboutMeSection = React.forwardRef<HTMLElement>((_, ref) => {
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <div className="ml-4 text-gray-400 text-sm">
-                  sobhan-aminnejad.dev
-                </div>
+                <div className="ml-4 text-gray-400 text-sm">sobition.dev</div>
               </div>
 
               <div

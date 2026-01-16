@@ -195,8 +195,7 @@ export const Footer = () => {
         <AnimateOnScroll animation="fade-up" delay={500}>
           <div className="mt-20 pt-10 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-gray-400">
-              © {new Date().getFullYear()} Sobhan Aminnejad. All rights
-              reserved.
+              © {new Date().getFullYear()} Sobition. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-6 text-gray-400">
               <a href="#" className="hover:text-white transition-colors">

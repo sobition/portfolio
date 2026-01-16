@@ -43,7 +43,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   <div className="aspect-square relative">
                     <Image
                       src="/images/sobhan.png"
-                      alt="Sobhan Aminnejad"
+                      alt="Sobi"
                       fill
                       className="object-cover"
                       priority
@@ -71,7 +71,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <AnimateOnScroll animation="fade-right" className="md:w-1/2 space-y-6">
         <h1 className="text-5xl md:text-6xl font-bold">
           Hi, I am <br />
-          <span className="text-[#4285f4]">Sobhan Aminnejad</span>
+          <span className="text-[#4285f4]">Sobi</span>
         </h1>
 
         <p className="text-lg text-gray-300 max-w-md">
@@ -176,7 +176,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   <div className="aspect-square relative">
                     <Image
                       src="/images/sobhan.png"
-                      alt="Sobhan Aminnejad"
+                      alt="Sobi"
                       fill
                       className="object-cover"
                       priority
