@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { AnimateOnScroll } from "./animate-on-scroll";
+import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Briefcase, Calendar, ExternalLink } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
-import { Badge } from "./ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 import { ScreenshotGallery } from "@/components/screenshot-gallery";
 import { experiences } from "@/data/experiences";
 
@@ -58,11 +58,8 @@ const ExperienceSection = React.forwardRef<
                 delay={index * 100}
                 className="relative"
               >
-                {/* Company Logo or Briefcase Icon */}
                 {(() => {
-                  // Import here to avoid SSR issues
-                  // eslint-disable-next-line @typescript-eslint/no-var-requires
-                  const { CompanyLogo } = require("./company-logo");
+                  const { CompanyLogo } = require("@/components/company-logo");
                   const logoExists = [
                     "Catawiki",
                     "SnappMarket",

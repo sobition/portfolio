@@ -27,9 +27,9 @@ export const Footer = () => {
               </Link>
 
               <p className="text-gray-300 text-lg max-w-md">
-                Senior Frontend Engineer specializing in building highly
-                effective and user-friendly websites using JavaScript frameworks
-                like React and Next.js.
+                Product engineer building web, backend, and mobile experiences
+                with React, React Native, Expo, Next.js, and scalable platform
+                systems.
               </p>
 
               <h3 className="text-xl font-bold pt-4">Follow me:</h3>

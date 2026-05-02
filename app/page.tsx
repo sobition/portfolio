@@ -7,12 +7,12 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import SkillsSection from "./skills-section";
 import Header from "../components/header";
 import { Inter } from "next/font/google";
-import ExperienceSection from "@/components/experience-section";
+import ExperienceSection from "@/components/sections/experience-section";
 // import ProjectsSection from "@/components/projects-section";
-import CertificatesSection from "@/components/certificates-section";
-import ContactSection from "@/components/contact-section";
-import AboutMeSection from "@/components/about-me-section";
-import HeroSection from "@/components/hero-section";
+import CertificatesSection from "@/components/sections/certificates-section";
+import ContactSection from "@/components/sections/contact-section";
+import AboutMeSection from "@/components/sections/about-me-section";
+import HeroSection from "@/components/sections/hero-section";
 
 const cascadiacode = Inter({
   subsets: ["latin"],

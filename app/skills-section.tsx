@@ -50,45 +50,49 @@ function SkillCategory({ title, skills, className }: SkillCategoryProps) {
 }
 
 const SkillsSection = React.forwardRef<HTMLElement>((_, ref) => {
-  // Programming Languages
   const languages = [
     { name: "JavaScript", color: "[#4285f4]" },
     { name: "TypeScript", color: "[#a259ff]" },
-    { name: "HTML", color: "[#25b6d2]" },
-    { name: "CSS", color: "[#4285f4]" },
-    { name: "Ruby", color: "[#a259ff]" },
     { name: "SQL", color: "[#25b6d2]" },
+    { name: "Ruby", color: "[#a259ff]" },
+    { name: "HTML", color: "[#4285f4]" },
+    { name: "CSS", color: "[#25b6d2]" },
   ];
 
-  // Frontend Frameworks & Libraries
-  const frontendFrameworks = [
+  const webFrontend = [
     { name: "React", color: "[#4285f4]" },
     { name: "Next.js", color: "[#a259ff]" },
     { name: "Redux", color: "[#25b6d2]" },
     { name: "Tailwind CSS", color: "[#4285f4]" },
     { name: "Styled Components", color: "[#a259ff]" },
-    { name: "Material UI", color: "[#25b6d2]" },
     { name: "SCSS", color: "[#4285f4]" },
   ];
 
-  // Backend Technologies
-  const backendTech = [
+  const mobile = [
+    { name: "React Native", color: "[#4285f4]" },
+    { name: "Expo", color: "[#a259ff]" },
+    { name: "Tamagui", color: "[#25b6d2]" },
+  ];
+
+  const backendArchitecture = [
+    { name: "NestJS", color: "[#4285f4]" },
     { name: "Node.js", color: "[#4285f4]" },
-    { name: "Express", color: "[#a259ff]" },
+    { name: "CQRS", color: "[#a259ff]" },
+    { name: "Prisma", color: "[#25b6d2]" },
     { name: "Ruby on Rails", color: "[#25b6d2]" },
-    { name: "REST APIs", color: "[#4285f4]" },
     { name: "GraphQL", color: "[#a259ff]" },
+    { name: "REST APIs", color: "[#4285f4]" },
   ];
 
-  // Databases
-  const databases = [
+  const dataPlatform = [
     { name: "PostgreSQL", color: "[#4285f4]" },
-    { name: "MongoDB", color: "[#a259ff]" },
-    { name: "Firebase", color: "[#25b6d2]" },
     { name: "Redis", color: "[#4285f4]" },
+    { name: "Apollo", color: "[#a259ff]" },
+    { name: "CI/CD", color: "[#25b6d2]" },
+    { name: "Docker", color: "[#4285f4]" },
+    { name: "Turborepo", color: "[#a259ff]" },
   ];
 
-  // Testing
   const testing = [
     { name: "Jest", color: "[#4285f4]" },
     { name: "React Testing Library", color: "[#a259ff]" },
@@ -96,25 +100,25 @@ const SkillsSection = React.forwardRef<HTMLElement>((_, ref) => {
     { name: "Cypress", color: "[#4285f4]" },
   ];
 
-  // Tools
   const tools = [
     { name: "Git", color: "[#4285f4]" },
     { name: "GitHub", color: "[#a259ff]" },
     { name: "VS Code", color: "[#25b6d2]" },
-    { name: "Docker", color: "[#4285f4]" },
-    { name: "CI/CD", color: "[#a259ff]" },
+    { name: "Linear", color: "[#4285f4]" },
+    { name: "Figma", color: "[#a259ff]" },
+    { name: "Vercel", color: "[#25b6d2]" },
     { name: "Webpack", color: "[#25b6d2]" },
     { name: "Babel", color: "[#4285f4]" },
     { name: "npm", color: "[#a259ff]" },
     { name: "Yarn", color: "[#25b6d2]" },
   ];
 
-  // Design Tools
-  const designTools = [
-    { name: "Figma", color: "[#4285f4]" },
-    { name: "Adobe XD", color: "[#a259ff]" },
-    { name: "Sketch", color: "[#25b6d2]" },
-    { name: "Photoshop", color: "[#4285f4]" },
+  const productFocus = [
+    { name: "Platform Migrations", color: "[#4285f4]" },
+    { name: "Developer Experience", color: "[#a259ff]" },
+    { name: "Performance", color: "[#25b6d2]" },
+    { name: "Design Systems", color: "[#4285f4]" },
+    { name: "Cross-Functional Delivery", color: "[#a259ff]" },
   ];
 
   return (
@@ -123,7 +127,8 @@ const SkillsSection = React.forwardRef<HTMLElement>((_, ref) => {
         <AnimateOnScroll animation="fade-up">
           <h2 className="text-5xl font-bold mb-4">Skills</h2>
           <p className="text-gray-300 mb-8 max-w-2xl">
-            My technical skills and tools I use in my development workflow.
+            Full-stack product engineering across web, mobile, backend, and
+            delivery systems.
           </p>
         </AnimateOnScroll>
 
@@ -136,9 +141,13 @@ const SkillsSection = React.forwardRef<HTMLElement>((_, ref) => {
                 </h3>
                 <div className="space-y-6">
                   <SkillCategory title="Languages" skills={languages} />
-                  <SkillCategory title="Frontend" skills={frontendFrameworks} />
-                  <SkillCategory title="Backend" skills={backendTech} />
-                  <SkillCategory title="Databases" skills={databases} />
+                  <SkillCategory title="Web Frontend" skills={webFrontend} />
+                  <SkillCategory title="Mobile" skills={mobile} />
+                  <SkillCategory
+                    title="Backend & Architecture"
+                    skills={backendArchitecture}
+                  />
+                  <SkillCategory title="Data & Platform" skills={dataPlatform} />
                   <SkillCategory title="Testing" skills={testing} />
                 </div>
               </div>
@@ -153,7 +162,7 @@ const SkillsSection = React.forwardRef<HTMLElement>((_, ref) => {
                 </h3>
                 <div className="space-y-6">
                   <SkillCategory title="Development Tools" skills={tools} />
-                  <SkillCategory title="Design Tools" skills={designTools} />
+                  <SkillCategory title="Product Focus" skills={productFocus} />
                 </div>
               </div>
             </AnimateOnScroll>

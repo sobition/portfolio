@@ -34,25 +34,24 @@ const AboutMeSection = React.forwardRef<HTMLElement>((_, ref) => {
 
               <div className="text-gray-200 leading-relaxed">
                 <p className="mb-4">
-                  Versatile and passionate Software Engineer with a strong focus
-                  on front-end development and a broad interest in software
-                  engineering as a whole. With extensive experience building
-                  highly effective and user-friendly websites using JavaScript
-                  frameworks like React and jQuery.
+                  Product-minded software engineer with 8+ years of experience
+                  building customer-facing products across web, backend, and
+                  mobile. I work comfortably across React, Next.js, React
+                  Native, Expo, NestJS, and platform architecture when the
+                  product needs it.
                 </p>
                 <p className="mb-4">
-                  I consistently seek opportunities to make impactful
-                  contributions that unblock business challenges—whether it's
-                  writing APIs, implementing end-to-end tests with Java, or
-                  exploring new technologies.
+                  My strongest work usually sits at the intersection of product
+                  delivery and engineering foundations: platform migrations,
+                  shared systems, performance work, APIs, developer experience,
+                  and pragmatic architecture that helps teams ship faster.
                 </p>
                 <p>
-                  Always open to new challenges and eager to learn, I believe
-                  that where there is trust and synergy within a team, my impact
-                  improves significantly. My ability to foster collaboration and
-                  communicate effectively with cross-functional teams ensures
-                  the delivery of high-quality, scalable web solutions that
-                  drive business success.
+                  I care about clear ownership, cross-functional collaboration,
+                  and building systems that stay useful after launch. Whether
+                  the problem is a React migration, a backend integration, or a
+                  new React Native flow, I aim to keep momentum high without
+                  sacrificing quality.
                 </p>
               </div>
             </div>
@@ -99,7 +98,7 @@ const AboutMeSection = React.forwardRef<HTMLElement>((_, ref) => {
                     </h3>
                     <p className="text-gray-300">Haarlem, The Netherlands</p>
                     <p className="text-gray-400">
-                      Senior Frontend Engineer at Catawiki
+                      Product Engineer at Catawiki
                     </p>
                   </div>
                 </div>
@@ -120,43 +119,41 @@ const AboutMeSection = React.forwardRef<HTMLElement>((_, ref) => {
                     <ul className="space-y-3 text-gray-300">
                       <li className="flex items-start">
                         <div className="min-w-[80px] text-[#4285f4] font-medium">
-                          2024–2025:
+                          2024–Now:
                         </div>
                         <div>
-                          Delivered +100 minutes of one-on-one ADPList
-                          mentorship, guiding junior engineers in React,
-                          performance tuning, and career development
+                          Reduced 15M+ weekly API calls at Catawiki by leading a
+                          shared layout migration and consolidating API-driven
+                          form specifications into reusable packages
                         </div>
                       </li>
                       <li className="flex items-start">
                         <div className="min-w-[80px] text-[#4285f4] font-medium">
-                          2024-Q3:
+                          2024:
                         </div>
                         <div>
-                          Reduced seller-facing build times by 70% (from 20 min
-                          → 6 min) by migrating Ruby-templated front-end
-                          components to a standalone Next.js architecture
+                          Expanded impact beyond frontend through backend API
+                          contributions, AI-assisted workflows, and development
+                          experience leadership within the Frontend guild
                         </div>
                       </li>
                       <li className="flex items-start">
                         <div className="min-w-[80px] text-[#a259ff] font-medium">
-                          2021-Q2:
+                          2025:
                         </div>
                         <div>
-                          Led the "Bundle Discount" feature—applying total-price
-                          discounts on item sets to promote new brands and clear
-                          expiring stock—driving a 40% lift in average basket
-                          value
+                          Building Aimee, an AI-powered travel app with React
+                          Native, Expo, GraphQL, NestJS, Prisma, and Tamagui
                         </div>
                       </li>
                       <li className="flex items-start">
-                        <div className="min-w-[80px] text-[#25b6d2] font-medium">
-                          2019–2020:
+                        <div className="min-w-[80px] text-[#a259ff] font-medium">
+                          2023–2024:
                         </div>
                         <div>
-                          Migrated multiple legacy apps from vanilla JS & jQuery
-                          to React / Next.js, improving maintainability and
-                          accelerating developer velocity
+                          Cut seller-facing build times by 70% by migrating
+                          frontend flows from Ruby templates to a standalone
+                          Next.js repository and improving CI/CD workflows
                         </div>
                       </li>
                     </ul>

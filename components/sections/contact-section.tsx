@@ -1,6 +1,10 @@
 import React from "react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { GithubIcon } from "@/components/icons/GithubIcon";
+import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
+import { Mail, MapPin } from "lucide-react";
 
 const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
   const [form, setForm] = React.useState({
@@ -10,7 +14,9 @@ const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
     message: "",
   });
   const [status, setStatus] = React.useState<null | "success" | "error">(null);
+  const [errorMessage, setErrorMessage] = React.useState("");
   const [submitting, setSubmitting] = React.useState(false);
+  const fallbackEmail = "sobition@gmail.com";
 
   const isFormValid =
     form.name.trim() &&
@@ -30,20 +36,32 @@ const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
     if (!isFormValid) return;
     setSubmitting(true);
     setStatus(null);
+    setErrorMessage("");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
+
+      const data = await res.json().catch(() => null);
+
       if (res.ok) {
         setStatus("success");
         setForm({ name: "", email: "", subject: "", message: "" });
       } else {
         setStatus("error");
+        setErrorMessage(
+          data?.fallbackEmail
+            ? `The form is unavailable right now. Email me directly at ${data.fallbackEmail}.`
+            : "Failed to send. Please try again."
+        );
       }
     } catch {
       setStatus("error");
+      setErrorMessage(
+        `The form is unavailable right now. Email me directly at ${fallbackEmail}.`
+      );
     } finally {
       setSubmitting(false);
     }
@@ -57,26 +75,83 @@ const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
     >
       <div className="container mx-auto px-4">
         <AnimateOnScroll animation="fade-up">
-          <h2 className="text-5xl font-bold mb-6">
+          <h2 className="text-5xl font-bold mb-4">
             Let's start something great together
           </h2>
+          <p className="max-w-2xl text-gray-300">
+            Reach out for product engineering roles, consulting, or
+            collaboration. If you prefer, you can also contact me directly by
+            email or LinkedIn.
+          </p>
         </AnimateOnScroll>
-        <div className="flex flex-col lg:flex-row mt-16">
+
+        <div className="flex flex-col lg:flex-row gap-12 mt-16 items-start">
           <AnimateOnScroll
             animation="fade-right"
             delay={100}
-            className="lg:w-1/2"
+            className="lg:w-5/12"
           >
-            <div className="relative">
-              {/* Binary code background */}
-              <div className="absolute -z-10 left-0 bottom-0 text-[#4285f4]/10 text-xs font-mono">
-                01100010 01100101 01101011 01101011 01100001 01110010 01101101
-                01100101 01110010 01110111 01100001 01101110
-              </div>
+            <div className="relative bg-[#0f1631] rounded-2xl p-8 overflow-hidden border border-white/5">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(66,133,244,0.16),transparent_42%),radial-gradient(circle_at_bottom_left,rgba(162,89,255,0.14),transparent_38%)]" />
+              <div className="relative space-y-8">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.2em] text-[#25b6d2]">
+                    Contact
+                  </p>
+                  <h3 className="text-3xl font-semibold mt-3">
+                    Prefer a direct route?
+                  </h3>
+                  <p className="text-gray-300 mt-3 leading-relaxed">
+                    If you prefer direct contact, use email or LinkedIn. Both
+                    are always available.
+                  </p>
+                </div>
 
-              {/* Data visualization */}
-              <div className="absolute -z-10 right-0 bottom-0 w-[400px] h-[200px]">
-                <div className="w-full h-full bg-gradient-to-r from-[#4285f4]/0 via-[#4285f4]/20 to-[#a259ff]/30 blur-xl"></div>
+                <div className="space-y-4">
+                  <a
+                    href={`mailto:${fallbackEmail}`}
+                    className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4 hover:border-[#4285f4]/40 hover:bg-white/10 transition-colors"
+                  >
+                    <div className="rounded-lg bg-[#4285f4]/15 p-3 text-[#4285f4]">
+                      <Mail className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-white">Email</div>
+                      <div className="text-gray-300">{fallbackEmail}</div>
+                    </div>
+                  </a>
+
+                  <div className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4">
+                    <div className="rounded-lg bg-[#a259ff]/15 p-3 text-[#a259ff]">
+                      <MapPin className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-white">Location</div>
+                      <div className="text-gray-300">Haarlem, The Netherlands</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <Link
+                    href="https://linkedin.com/in/sobhan-aminnejad/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 rounded-full border border-white/10 px-4 py-3 text-gray-200 hover:border-[#4285f4]/40 hover:text-white transition-colors"
+                  >
+                    <LinkedinIcon name="linkedin" size={20} />
+                    LinkedIn
+                  </Link>
+                  <Link
+                    href="https://github.com/sobition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 rounded-full border border-white/10 px-4 py-3 text-gray-200 hover:border-[#4285f4]/40 hover:text-white transition-colors"
+                  >
+                    <GithubIcon name="github" size={20} />
+                    GitHub
+                  </Link>
+                </div>
               </div>
             </div>
           </AnimateOnScroll>
@@ -84,9 +159,12 @@ const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
           <AnimateOnScroll
             animation="fade-left"
             delay={200}
-            className="lg:w-1/2"
+            className="lg:w-7/12 w-full"
           >
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form
+              className="space-y-6 rounded-2xl border border-white/5 bg-[#0f1631] p-8"
+              onSubmit={handleSubmit}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-gray-300 block">
@@ -153,7 +231,13 @@ const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
               )}
               {status === "error" && (
                 <div className="text-red-400 text-sm">
-                  Failed to send. Please try again.
+                  {errorMessage}
+                  <a
+                    href={`mailto:${fallbackEmail}`}
+                    className="ml-1 underline underline-offset-4"
+                  >
+                    Email directly
+                  </a>
                 </div>
               )}
             </form>

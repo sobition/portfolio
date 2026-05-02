@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Sobi - Portfolio",
   description:
-    "Portfolio of Sobi, a Software Engineer with a focus on front-end development.",
+    "Portfolio of Sobhan Aminnejad, a product engineer building web, backend, and mobile experiences with React, React Native, Expo, NestJS, and scalable platform architecture.",
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
         <title>Sobi - Portfolio</title>
         <meta
           name="description"
-          content="Portfolio of Sobi, a Software Engineer with a focus on front-end development."
+          content="Portfolio of Sobhan Aminnejad, a product engineer building web, backend, and mobile experiences with React, React Native, Expo, NestJS, and scalable platform architecture."
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />

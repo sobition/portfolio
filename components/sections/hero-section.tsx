@@ -75,9 +75,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </h1>
 
         <p className="text-lg text-gray-300 max-w-md">
-          Senior Frontend Engineer specializing in building highly effective and
-          user-friendly websites using JavaScript frameworks like React and
-          Next.js.
+          Product engineer with 8+ years of experience shipping web, backend,
+          and mobile products with React, Next.js, React Native, Expo, and
+          scalable platform architecture.
         </p>
 
         <div className="flex flex-wrap gap-4 pt-4">

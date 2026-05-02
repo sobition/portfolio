@@ -1,5 +1,11 @@
 import { Resend } from "resend";
 
+const resendApiKey = process.env.RESEND_API_KEY;
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
+const fallbackEmail = "sobition@gmail.com";
+const fromAddress =
+  process.env.CONTACT_FROM_EMAIL || "Sobifolio <onboarding@resend.dev>";
+
 export async function POST(req: Request) {
   try {
     const { name, email, subject, message } = await req.json();
@@ -14,9 +20,12 @@ export async function POST(req: Request) {
       );
     }
 
-    if (!process.env.RESEND_API_KEY) {
+    if (!resend) {
       return new Response(
-        JSON.stringify({ error: "Email service not configured" }),
+        JSON.stringify({
+          error: "Contact form is not configured on this deployment",
+          fallbackEmail,
+        }),
         {
           status: 503,
           headers: { "Content-Type": "application/json" },
@@ -24,11 +33,10 @@ export async function POST(req: Request) {
       );
     }
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
-
     await resend.emails.send({
-      from: "Sobifolio <contact@sobifolio.dev>",
-      to: "sobition@gmail.com",
+      from: fromAddress,
+      to: fallbackEmail,
+      replyTo: email,
       subject: subject
         ? `[Sobifolio] ${subject}`
         : "New message from sobifolio contact form",
@@ -47,9 +55,15 @@ export async function POST(req: Request) {
     });
   } catch (error) {
     console.error("Email error:", error);
-    return new Response(JSON.stringify({ error: "Email failed to send" }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({
+        error: "Email failed to send",
+        fallbackEmail,
+      }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
 }
