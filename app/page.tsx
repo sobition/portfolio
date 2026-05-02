@@ -85,7 +85,6 @@ export default function Portfolio() {
         aboutRef={aboutRef}
         experienceRef={experienceRef}
         projectsRef={projectsRef}
-        certificatesRef={certificatesRef}
         skillsRef={skillsRef}
         contactRef={contactRef}
       />

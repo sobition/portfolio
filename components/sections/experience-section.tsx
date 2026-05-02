@@ -28,8 +28,8 @@ const ExperienceSection = React.forwardRef<
         <AnimateOnScroll animation="fade-up">
           <h2 className="text-5xl font-bold mb-6">Experience</h2>
           <p className="text-gray-300 mb-16 max-w-2xl">
-            My professional journey through various companies and roles in the
-            tech industry.
+            Roles where the work ranged from product UI to delivery systems,
+            shared architecture, and backend-adjacent implementation.
           </p>
         </AnimateOnScroll>
 

@@ -24,11 +24,11 @@ export const experiences: Experience[] = [
     position: "Senior Frontend Engineer",
     period: "March 2024 - Present",
     achievements: [
-      "Led cw-assets to @catawiki/layout migration, reducing build times by 70%, improving Core Web Vitals, and unblocking team-wide Next.js upgrades through systematic deprecation planning and cross-team collaboration.",
-      "Unified Specifications Platform across Seller UI and Auctioneer Tools, eliminating code duplication and enabling new specification rules to ship instantly to all surfaces.",
-      "Pioneered AI-assisted development workflows (Figma x Copilot integration, GitHub Copilot instructions) adopted by 3+ engineers, accelerating Node.js migration and reducing PR review cycles.",
-      "Shipped One-Click Resubmission feature end-to-end using TDD and AI-accelerated tooling, streamlining repeat supply workflows while mentoring backend engineers.",
-      "Spearheaded high-impact B2B campaign (Porsche Droomruil), leveraging data-driven UX improvements that increased user engagement by 20%.",
+      "Led the `cw-assets` to `@catawiki/layout` migration across seller-facing flows, reducing build times by 70%, improving Core Web Vitals, and unblocking broader Next.js upgrades.",
+      "Helped turn specifications into a shared platform across Seller UI and Auctioneer Tools, reducing duplicated logic and letting new rules ship once across multiple surfaces.",
+      "Worked beyond the frontend on Node.js and Rails-backed flows, contributing to backend-aligned product delivery for seller tooling and operational workflows.",
+      "Shipped One-Click Resubmission end-to-end with TDD, coordinating UI, API behavior, and workflow logic to simplify repeat supply actions for sellers.",
+      "Introduced AI-assisted engineering workflows through Copilot guidance and Figma-to-code experimentation, shortening delivery loops without making AI the product story.",
     ],
     technologies: [
       "JavaScript",
@@ -78,9 +78,9 @@ export const experiences: Experience[] = [
     position: "Frontend Engineer",
     period: "July 2022 - March 2024",
     achievements: [
-      "Reduced onboarding time by 40% by refactoring core components into a modular architecture and streamlining documentation.",
-      "Strengthened product quality by implementing end-to-end testing with Java Selenium, reducing QA backlog by 20% and cutting critical production bugs by 60%.",
-      "Migrated frontend from Ruby templates to a standalone Next.js repository, reducing build times by 70% (20 to 6 minutes) and improving CI/CD efficiency.",
+      "Migrated seller-facing flows from Ruby templates into a standalone Next.js codebase, cutting build times from 20 to 6 minutes and improving release speed.",
+      "Improved engineering leverage by refactoring shared components and documentation, reducing onboarding time by 40% for engineers entering the codebase.",
+      "Raised product quality by expanding end-to-end coverage with Java Selenium, reducing QA backlog by 20% and cutting critical production bugs by 60%.",
     ],
     technologies: [
       "JavaScript",
@@ -123,9 +123,9 @@ export const experiences: Experience[] = [
     position: "Front-End Team Lead",
     period: "August 2021 - July 2022",
     achievements: [
-      "Ensured uninterrupted transactions by architecting a server-side cart system with a client-side fallback, increasing purchase completion rates by 20%.",
-      "Boosted average basket value by 40% by launching a bundle discount feature, driving cross-selling.",
-      "Reduced deployment time by 50% by introducing CI/CD automation, minimizing release-related issues.",
+      "Architected a server-side cart flow with a client-side fallback to protect checkout reliability, increasing purchase completion rates by 20%.",
+      "Launched bundle discount mechanics that combined product, pricing, and cart behavior, increasing average basket value by 40%.",
+      "Improved release operations by introducing CI/CD automation, cutting deployment time by 50% and reducing manual release risk.",
     ],
     technologies: [
       "JavaScript",
@@ -173,10 +173,10 @@ export const experiences: Experience[] = [
     position: "Senior Front-End Engineer",
     period: "May 2020 - August 2021",
     achievements: [
-      "Lifted conversion rate by 15% by optimizing UI flows across the purchase funnel.",
-      "Reduced post-deployment issues by over 30% by establishing structured code review practices and improving code quality.",
-      "Mentored two frontend interns, enabling successful project delivery ahead of schedule.",
-      "Boosted organic traffic by 35% by implementing React Server-Side Rendering (SSR), improving search visibility and page indexing.",
+      "Improved conversion by 15% through targeted changes across the booking and purchase funnel.",
+      "Implemented React SSR to improve search visibility and page indexing, increasing organic traffic by 35%.",
+      "Reduced post-deployment issues by more than 30% by establishing stronger review practices and code quality standards.",
+      "Mentored frontend interns while maintaining delivery pace on customer-facing product work.",
     ],
     technologies: [
       "JavaScript",
@@ -224,9 +224,9 @@ export const experiences: Experience[] = [
     position: "Front-End Engineer",
     period: "August 2018 - May 2020",
     achievements: [
-      "Ensured 99.9% site availability by revamping website architecture for improved uptime and performance.",
-      "Reduced admin task completion time by 40% by building and launching a React-based admin panel.",
-      "Streamlined client account management by engineering a B2B dashboard with React, improving user retention.",
+      "Improved uptime and performance through a broader website architecture refresh that supported 99.9% availability.",
+      "Built a React-based admin panel that reduced internal task completion time by 40%.",
+      "Developed a B2B dashboard for account management, improving operational efficiency and retention support.",
     ],
     technologies: [
       "JavaScript",
@@ -250,8 +250,8 @@ export const experiences: Experience[] = [
     position: "Front-End Developer",
     period: "May 2018 - August 2018",
     achievements: [
-      "Led redesign of the B2B panel from jQuery to React and Ant Design, modernizing the UI and improving usability.",
-      "Enhanced onboarding experience by building a custom hint component for user guidance.",
+      "Redesigned a B2B panel from jQuery to React and Ant Design, modernizing the interface and improving maintainability.",
+      "Built onboarding guidance components that made the product easier to navigate for new users.",
     ],
     technologies: [
       "JavaScript",

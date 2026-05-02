@@ -76,12 +76,12 @@ const ContactSection = React.forwardRef<HTMLElement>((_, ref) => {
       <div className="container mx-auto px-4">
         <AnimateOnScroll animation="fade-up">
           <h2 className="text-5xl font-bold mb-4">
-            Let's start something great together
+            Open to product engineering conversations
           </h2>
           <p className="max-w-2xl text-gray-300">
-            Reach out for product engineering roles, consulting, or
-            collaboration. If you prefer, you can also contact me directly by
-            email or LinkedIn.
+            Especially relevant for fintech, AI-first, and product teams that
+            need someone who can move across frontend, backend-adjacent
+            systems, and delivery constraints.
           </p>
         </AnimateOnScroll>
 

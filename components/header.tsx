@@ -6,7 +6,6 @@ interface HeaderProps {
   aboutRef: React.RefObject<HTMLElement | null>;
   experienceRef: React.RefObject<HTMLElement | null>;
   projectsRef: React.RefObject<HTMLElement | null>;
-  certificatesRef: React.RefObject<HTMLElement | null>;
   skillsRef: React.RefObject<HTMLElement | null>;
   contactRef: React.RefObject<HTMLElement | null>;
 }
@@ -16,7 +15,6 @@ const Header: React.FC<HeaderProps> = ({
   aboutRef,
   experienceRef,
   projectsRef,
-  certificatesRef,
   skillsRef,
   contactRef,
 }) => {
@@ -33,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({
             onClick={() => scrollToSection(aboutRef)}
             className="hover:text-white transition-colors"
           >
-            About me
+            About
           </button>
           <button
             onClick={() => scrollToSection(experienceRef)}
@@ -45,13 +43,7 @@ const Header: React.FC<HeaderProps> = ({
             onClick={() => scrollToSection(projectsRef)}
             className="hover:text-white transition-colors"
           >
-            Projects
-          </button>
-          <button
-            onClick={() => scrollToSection(certificatesRef)}
-            className="hover:text-white transition-colors"
-          >
-            Certificates
+            Selected work
           </button>
           <button
             onClick={() => scrollToSection(skillsRef)}
@@ -63,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({
             onClick={() => scrollToSection(contactRef)}
             className="hover:text-white transition-colors"
           >
-            Contact me
+            Contact
           </button>
         </nav>
       </div>

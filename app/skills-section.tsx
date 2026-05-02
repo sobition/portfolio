@@ -117,8 +117,9 @@ const SkillsSection = React.forwardRef<HTMLElement>((_, ref) => {
     { name: "Platform Migrations", color: "[#4285f4]" },
     { name: "Developer Experience", color: "[#a259ff]" },
     { name: "Performance", color: "[#25b6d2]" },
-    { name: "Design Systems", color: "[#4285f4]" },
+    { name: "API Integrations", color: "[#4285f4]" },
     { name: "Cross-Functional Delivery", color: "[#a259ff]" },
+    { name: "AI-Assisted Delivery", color: "[#25b6d2]" },
   ];
 
   return (
@@ -127,8 +128,8 @@ const SkillsSection = React.forwardRef<HTMLElement>((_, ref) => {
         <AnimateOnScroll animation="fade-up">
           <h2 className="text-5xl font-bold mb-4">Skills</h2>
           <p className="text-gray-300 mb-8 max-w-2xl">
-            Full-stack product engineering across web, mobile, backend, and
-            delivery systems.
+            The stack is broad, but the pattern is consistent: frontend depth,
+            backend range, and product delivery across the system.
           </p>
         </AnimateOnScroll>
 

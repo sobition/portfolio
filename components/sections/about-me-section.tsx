@@ -2,161 +2,130 @@ import React from "react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 
 const AboutMeSection = React.forwardRef<HTMLElement>((_, ref) => {
+  const principles = [
+    {
+      title: "Fullstack by default",
+      accent: "bg-[#4285f4]",
+      body: "My strongest area is frontend, but the work rarely stops there. I'm comfortable following product problems across APIs, business logic, service boundaries, and delivery systems when that is what the outcome requires.",
+    },
+    {
+      title: "Product impact over surface area",
+      accent: "bg-[#a259ff]",
+      body: "A lot of my best work sits in shared systems, migrations, performance, and workflow simplification. That tends to look less flashy than a new screen, but it changes how fast teams can ship and how reliably products operate.",
+    },
+    {
+      title: "AI as engineering leverage",
+      accent: "bg-[#25b6d2]",
+      body: "I use AI for implementation support, task orchestration, and faster exploration across unfamiliar areas. The point is not to center AI as identity. The point is to increase throughput while keeping engineering judgment intact.",
+    },
+  ];
+
   return (
-    <section ref={ref} id="about" className="py-20 relative overflow-hidden">
+    <section ref={ref} id="about" className="relative overflow-hidden py-20">
       <div className="container mx-auto px-4">
         <AnimateOnScroll animation="fade-up">
-          <h2 className="text-5xl font-bold mb-16">About me</h2>
+          <h2 className="mb-6 text-5xl font-bold">About</h2>
+          <p className="mb-16 max-w-3xl text-lg leading-8 text-gray-300">
+            I&apos;m a product engineer with around eight years of experience
+            across web, mobile, and supporting backend systems. I&apos;m
+            strongest when the brief is ambiguous, the product matters, and the
+            work spans more than one layer of the stack.
+          </p>
         </AnimateOnScroll>
 
-        <div className="flex flex-col lg:flex-row gap-10 items-center">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start">
           <AnimateOnScroll animation="fade-right" className="lg:w-1/2">
-            <div className="bg-[#0f1631] rounded-lg p-8 relative">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <div className="ml-4 text-gray-400 text-sm">sobition.dev</div>
+            <div className="relative rounded-lg bg-[#0f1631] p-8">
+              <div className="mb-4 flex items-center gap-2">
+                <div className="h-3 w-3 rounded-full bg-red-500"></div>
+                <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+                <div className="h-3 w-3 rounded-full bg-green-500"></div>
+                <div className="ml-4 text-sm text-gray-400">
+                  operating-range.ts
+                </div>
               </div>
 
               <div
-                className="flex items-center gap-2 mb-6"
+                className="mb-6 flex items-center gap-2"
                 style={{ fontFamily: "Cascadia Code, monospace" }}
               >
                 <div className="text-yellow-400">✦</div>
                 <div>
-                  <span className="text-[#1ACB01]">sobition</span>{" "}
-                  <span className="text-[#4E4E4E]">at</span>{" "}
-                  <span className="text-[#FF0]">portfolio</span>
-                  <span className="text-[#4E4E4E]"> :</span>
+                  <span className="text-[#1ACB01]">sobhan</span>{" "}
+                  <span className="text-[#4E4E4E]">positionedAs</span>{" "}
+                  <span className="text-[#FF0]">product_engineer</span>
+                  <span className="text-[#4E4E4E]">;</span>
                 </div>
               </div>
 
-              <div className="text-gray-200 leading-relaxed">
+              <div className="leading-relaxed text-gray-200">
                 <p className="mb-4">
-                  Product-minded software engineer with 8+ years of experience
-                  building customer-facing products across web, backend, and
-                  mobile. I work comfortably across React, Next.js, React
-                  Native, Expo, NestJS, and platform architecture when the
-                  product needs it.
+                  I&apos;ve spent most of my career shipping user-facing product
+                  in React ecosystems, but my contribution is not limited to UI
+                  implementation. I regularly work through the surrounding
+                  system: APIs, platform constraints, delivery architecture, and
+                  shared logic that affects multiple teams.
                 </p>
                 <p className="mb-4">
-                  My strongest work usually sits at the intersection of product
-                  delivery and engineering foundations: platform migrations,
-                  shared systems, performance work, APIs, developer experience,
-                  and pragmatic architecture that helps teams ship faster.
+                  That makes me a strong fit for product engineering roles where
+                  frontend quality matters, but the real job is delivering
+                  outcomes across the full stack. I ramp quickly, ask the right
+                  system questions, and tend to be useful in both mature
+                  codebases and messy transition periods.
                 </p>
                 <p>
-                  I care about clear ownership, cross-functional collaboration,
-                  and building systems that stay useful after launch. Whether
-                  the problem is a React migration, a backend integration, or a
-                  new React Native flow, I aim to keep momentum high without
-                  sacrificing quality.
+                  In recent work, AI has become part of how I operate rather
+                  than the headline. I use it to compress research,
+                  implementation, and iteration loops, while keeping the work
+                  grounded in sound engineering and product judgment.
                 </p>
               </div>
             </div>
           </AnimateOnScroll>
 
-          <div className="lg:w-1/2 relative">
-            {/* New connected sections with visual elements */}
+          <div className="relative lg:w-1/2">
             <div className="relative space-y-6">
-              <AnimateOnScroll animation="fade-left" delay={100}>
-                <div className="bg-[#0f1631] p-6 rounded-lg relative overflow-hidden group hover:bg-[#0f1631]/80 transition-colors">
-                  {/* Accent border */}
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#4285f4]"></div>
-                  {/* Hover effect */}
-                  <div className="absolute -right-20 -top-20 w-40 h-40 bg-[#4285f4]/5 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+              {principles.map((principle, index) => (
+                <AnimateOnScroll
+                  key={principle.title}
+                  animation="fade-left"
+                  delay={100 + index * 100}
+                >
+                  <div className="group relative overflow-hidden rounded-lg bg-[#0f1631] p-6 transition-colors hover:bg-[#0f1631]/80">
+                    <div
+                      className={`absolute top-0 bottom-0 left-0 w-1 ${principle.accent}`}
+                    ></div>
+                    <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-white/[0.03] transition-transform duration-500 group-hover:scale-150"></div>
 
-                  <div className="relative">
-                    <h3 className="text-l font-semibold mb-2 flex items-center">
-                      <span className="text-[#4285f4] mr-2">🎓</span> Education
-                    </h3>
-                    <p className="text-gray-300">B. Engineering in Computer</p>
-                    <p className="text-gray-400">
-                      University of Science and Culture, Tehran, Iran • 2019
-                    </p>
-                    <p className="text-gray-300 mt-2">
-                      B. Engineering in Computer
-                    </p>
-                    <p className="text-gray-400">
-                      University of Pretoria, Pretoria, South Africa • 2016
-                    </p>
+                    <div className="relative">
+                      <h3 className="mb-3 text-lg font-semibold text-white">
+                        {principle.title}
+                      </h3>
+                      <p className="leading-7 text-gray-300">
+                        {principle.body}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </AnimateOnScroll>
+                </AnimateOnScroll>
+              ))}
 
-              <AnimateOnScroll animation="fade-left" delay={200}>
-                <div className="bg-[#0f1631] p-6 rounded-lg relative overflow-hidden group hover:bg-[#0f1631]/80 transition-colors">
-                  {/* Accent border */}
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#a259ff]"></div>
-                  {/* Hover effect */}
-                  <div className="absolute -right-20 -top-20 w-40 h-40 bg-[#a259ff]/5 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
-
-                  <div className="relative">
-                    <h3 className="text-l font-semibold mb-2 flex items-center">
-                      <span className="text-[#a259ff] mr-2">📍</span> Location
-                    </h3>
-                    <p className="text-gray-300">Haarlem, The Netherlands</p>
-                    <p className="text-gray-400">
-                      Product Engineer at Catawiki
-                    </p>
+              <AnimateOnScroll animation="fade-left" delay={450}>
+                <div className="grid gap-4 rounded-lg border border-white/10 bg-[#0c132c] p-6 md:grid-cols-2">
+                  <div>
+                    <div className="text-sm uppercase tracking-[0.2em] text-[#25b6d2]">
+                      Location
+                    </div>
+                    <div className="mt-2 text-gray-200">
+                      Haarlem, The Netherlands
+                    </div>
                   </div>
-                </div>
-              </AnimateOnScroll>
-
-              <AnimateOnScroll animation="fade-left" delay={300}>
-                <div className="bg-[#0f1631] p-6 rounded-lg relative overflow-hidden group hover:bg-[#0f1631]/80 transition-colors">
-                  {/* Accent border */}
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#25b6d2]"></div>
-                  {/* Hover effect */}
-                  <div className="absolute -right-20 -top-20 w-40 h-40 bg-[#25b6d2]/5 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
-
-                  <div className="relative">
-                    <h3 className="text-l font-semibold mb-2 flex items-center">
-                      <span className="text-[#25b6d2] mr-2">🏆</span> Key
-                      Achievements
-                    </h3>
-                    <ul className="space-y-3 text-gray-300">
-                      <li className="flex items-start">
-                        <div className="min-w-[80px] text-[#4285f4] font-medium">
-                          2024–Now:
-                        </div>
-                        <div>
-                          Reduced 15M+ weekly API calls at Catawiki by leading a
-                          shared layout migration and consolidating API-driven
-                          form specifications into reusable packages
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="min-w-[80px] text-[#4285f4] font-medium">
-                          2024:
-                        </div>
-                        <div>
-                          Expanded impact beyond frontend through backend API
-                          contributions, AI-assisted workflows, and development
-                          experience leadership within the Frontend guild
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="min-w-[80px] text-[#a259ff] font-medium">
-                          2025:
-                        </div>
-                        <div>
-                          Building Aimee, an AI-powered travel app with React
-                          Native, Expo, GraphQL, NestJS, Prisma, and Tamagui
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="min-w-[80px] text-[#a259ff] font-medium">
-                          2023–2024:
-                        </div>
-                        <div>
-                          Cut seller-facing build times by 70% by migrating
-                          frontend flows from Ruby templates to a standalone
-                          Next.js repository and improving CI/CD workflows
-                        </div>
-                      </li>
-                    </ul>
+                  <div>
+                    <div className="text-sm uppercase tracking-[0.2em] text-[#25b6d2]">
+                      Current role
+                    </div>
+                    <div className="mt-2 text-gray-200">
+                      Senior Frontend Engineer at Catawiki
+                    </div>
                   </div>
                 </div>
               </AnimateOnScroll>
