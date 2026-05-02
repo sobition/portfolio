@@ -8,7 +8,7 @@ import SkillsSection from "./skills-section";
 import Header from "../components/header";
 import { Inter } from "next/font/google";
 import ExperienceSection from "@/components/sections/experience-section";
-// import ProjectsSection from "@/components/projects-section";
+import ProjectsSection from "@/components/sections/projects-section";
 import CertificatesSection from "@/components/sections/certificates-section";
 import ContactSection from "@/components/sections/contact-section";
 import AboutMeSection from "@/components/sections/about-me-section";
@@ -21,8 +21,7 @@ const cascadiacode = Inter({
 });
 
 export default function Portfolio() {
-  const isMobile = typeof window !== "undefined" ? useIsMobile() : false;
-
+  const isMobile = useIsMobile();
   const isMobileBoolean = isMobile ?? false;
 
   // Refs for scroll sections
@@ -32,9 +31,9 @@ export default function Portfolio() {
   const experienceRef = useRef<HTMLElement>(
     null
   ) as React.MutableRefObject<HTMLElement | null>;
-  // const projectsRef = useRef<HTMLElement>(
-  //   null
-  // ) as React.MutableRefObject<HTMLElement | null>;
+  const projectsRef = useRef<HTMLElement>(
+    null
+  ) as React.MutableRefObject<HTMLElement | null>;
   const certificatesRef = useRef<HTMLElement>(
     null
   ) as React.MutableRefObject<HTMLElement | null>;
@@ -62,7 +61,7 @@ export default function Portfolio() {
         const hash = window.location.hash;
         if (hash === "#about") scrollToSection(aboutRef);
         if (hash === "#experience") scrollToSection(experienceRef);
-        // if (hash === "#projects") scrollToSection(projectsRef);
+        if (hash === "#projects") scrollToSection(projectsRef);
         if (hash === "#certificates") scrollToSection(certificatesRef);
         if (hash === "#skills") scrollToSection(skillsRef);
         if (hash === "#contact") scrollToSection(contactRef);
@@ -85,7 +84,7 @@ export default function Portfolio() {
         scrollToSection={scrollToSection}
         aboutRef={aboutRef}
         experienceRef={experienceRef}
-        // projectsRef={projectsRef}
+        projectsRef={projectsRef}
         certificatesRef={certificatesRef}
         skillsRef={skillsRef}
         contactRef={contactRef}
@@ -104,8 +103,7 @@ export default function Portfolio() {
 
         <ExperienceSection ref={experienceRef} />
 
-        {/* Projects Section */}
-        {/* <ProjectsSection ref={projectsRef} /> */}
+        <ProjectsSection ref={projectsRef} />
 
         {/* Certificates Section */}
         <CertificatesSection ref={certificatesRef} />
